@@ -3,12 +3,21 @@ package ba.bitcamp.homework.Benjo.xmlrss;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
-
+/**
+ * Class staht creates article.
+ * @author Amra
+ *
+ */
 public class Article {
 
 	public String title;
 	public String article;
 	
+	/**
+	 * Constructor for article.
+	 * @param title
+	 * @param article
+	 */
 	public Article(String title, String article){
 		this.title = title;
 		this.article =  article;

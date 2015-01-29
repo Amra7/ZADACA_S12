@@ -7,6 +7,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,11 +20,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class ReadKlix {
-
-	public String getValue(Element parent, String nodeName) {
-		return parent.getElementsByTagName(nodeName).item(0).getFirstChild()
-				.getNodeValue();
-	}
 
 	public static void main(String[] args) throws ParserConfigurationException,
 			SAXException, IOException {
@@ -48,7 +44,6 @@ public class ReadKlix {
 		for (int i = 0; i < xmlItem.getLength(); i++) {
 			Node current = xmlItem.item(i);
 			if (current instanceof Element) {
-				Article articleTemp = new Article(title, article);
 
 				NodeList innerArticle = current.getChildNodes();
 
@@ -57,37 +52,49 @@ public class ReadKlix {
 					if (innerCurrent instanceof Element) {
 						Element innerCurrentElement = (Element) innerCurrent;
 
-						if (innerCurrent.getNodeName().equalsIgnoreCase("title")) {
+						if (innerCurrent.getNodeName()
+								.equalsIgnoreCase("title")) {
 							title = current.getTextContent();
 							System.out.println("Title: \n" + title);
+							System.out.println("_________________________________________________________");
 						}
 						// if(current.getNodeName().equalsIgnoreCase("uvod")){
 						// String uvod = current.getTextContent();
 						// System.out.println("uvod: \n" + uvod );
 						// }
 
-						if (innerCurrent.getNodeName().equalsIgnoreCase("clanak")) {
+						if (innerCurrent.getNodeName().equalsIgnoreCase(
+								"clanak")) {
 							article = current.getTextContent();
 							System.out.println("Article: \n" + article);
+							System.out.println("_________________________________________________________");
 						}
-						
+
 					}
-					singleArticle.add(articleTemp);
-					
-				} 
-				System.out.println("Title : " + current.getChildNodes().item(0).getTextContent());
-//				System.out.println(innerArticle.item(1).getNodeName());
-				System.out.println("------------------------------------------------------------------------------------");
-				articles.add(new Article(title, article));
+
+				}
+				singleArticle.add(new Article(title, article));
 
 			}
 		}
+		Scanner scan =  new Scanner(System.in);
+		System.out.println("Unesi broj clanka: ");
+		int numArticle = scan.nextInt();
+		int count = 0;
+
+		 Iterator<Article> iter = articles.iterator();
+		 while( iter.hasNext()){
+			 count++;
+			 Article art = iter.next();
+			 if (count == numArticle){
+				 System.out.println("-------------------------------------------------------------------------------");
+				 System.out.println();
+				 System.out.printf("Trazili ste clanak pod brojem %d %s \n", numArticle, art.toString());
+				 break;
+			 }
 		
-//		Iterator iter = articles.iterator();
-//		while( iter.hasNext()){
-//			System.out.println("-------------------------------------------------------------------------------");
-//			System.out.println();
-//			System.out.println(iter.next().toString());
-//		}
+		 }
 	}
+
+	// end of main class
 }

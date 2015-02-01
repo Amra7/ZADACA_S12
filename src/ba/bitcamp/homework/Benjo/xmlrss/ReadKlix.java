@@ -58,10 +58,7 @@ public class ReadKlix {
 							System.out.println("Title: \n" + title);
 							System.out.println("_________________________________________________________");
 						}
-						// if(current.getNodeName().equalsIgnoreCase("uvod")){
-						// String uvod = current.getTextContent();
-						// System.out.println("uvod: \n" + uvod );
-						// }
+					
 
 						if (innerCurrent.getNodeName().equalsIgnoreCase(
 								"clanak")) {

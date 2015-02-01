@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<busStation>
+<bus='' number='1'  bus line= 'Zenica'>
+    <busLine number='11'  bus line= 'Mostar'/>
+    <busLine number='12'  bus line= 'Tuzla'/>
+    <busLine number='13'  bus line= 'Bec'/>
+ </bus>
+<bus='' number='2'  bus line= 'Sarajevo'>
+    <busLine number='21'  bus line= 'Bec'/>
+    <busLine number='22'  bus line= 'Graz'/>
+    <busLine number='23'  bus line= 'Ljubljana'/>
+ </bus>
+<bus='' number='3'  bus line= 'Tuzla'>
+    <busLine number='31'  bus line= 'Mostar'/>
+    <busLine number='32'  bus line= 'Zagreb'/>
+    <busLine number='33'  bus line= 'Beograd'/>
+ </bus>
+<bus='' number='4'  bus line= 'Mostar'>
+    <busLine number='41'  bus line= 'Neum'/>
+    <busLine number='42'  bus line= 'Split'/>
+    <busLine number='43'  bus line= 'Rijeka'/>
+ </bus>
+<bus='' number='5'  bus line= 'Zagreb'>
+    <busLine number='51'  bus line= 'Bec'/>
+    <busLine number='52'  bus line= 'Split'/>
+    <busLine number='53'  bus line= 'Beograd'/>
+ </bus>
+<bus='' number='6'  bus line= 'Beograd'>
+    <busLine number='61'  bus line= 'Skoplje'/>
+    <busLine number='62'  bus line= 'Podgorica'/>
+    <busLine number='63'  bus line= 'Sarajevo'/>
+ </bus>
+</busStation>

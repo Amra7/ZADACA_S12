@@ -16,6 +16,7 @@ te napraviti strukturu sa pocetka projekta
 (kao sto bi rekli gamerskim rijecnikom, napraviti save i load podataka)
 
 Text Zadatak3 ( Tarik threads ) 
+
 *Napomena ovu zadacu nisam uradila samo sam prevejzbala sto smo radili na nastavi.
 
 Threads in Java zadatak za samostalni rad

@@ -4,7 +4,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
 /**
- * Class staht creates article.
+ * Class that creates article.
  * @author Amra
  *
  */

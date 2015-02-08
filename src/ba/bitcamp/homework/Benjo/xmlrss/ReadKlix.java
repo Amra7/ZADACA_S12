@@ -18,9 +18,20 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
+/**
+ * ReadKlixs provides reading articles from page klix.ba.
+ * @author amrapoprzanovic
+ *
+ */
 public class ReadKlix {
 
+	/**
+	 * Main method provides reading RSS Feeds from klix.ba.
+	 * @param args
+	 * @throws ParserConfigurationException
+	 * @throws SAXException
+	 * @throws IOException
+	 */
 	public static void main(String[] args) throws ParserConfigurationException,
 			SAXException, IOException {
 
@@ -37,7 +48,6 @@ public class ReadKlix {
 		NodeList xmlItem = xmldoc.getElementsByTagName("item");
 
 		LinkedList<Article> articles = new LinkedList<Article>();
-		LinkedList<Article> singleArticle = new LinkedList<Article>();
 
 		String title = "";
 		String article = "";
@@ -52,7 +62,7 @@ public class ReadKlix {
 					if (innerCurrent instanceof Element) {
 						Element innerCurrentElement = (Element) innerCurrent;
 
-						if (innerCurrent.getNodeName()
+						if (innerCurrentElement.getNodeName()
 								.equalsIgnoreCase("title")) {
 							title = current.getTextContent();
 							System.out.println("Title: \n" + title);
@@ -70,7 +80,7 @@ public class ReadKlix {
 					}
 
 				}
-				singleArticle.add(new Article(title, article));
+				articles.add(new Article(title, article));
 
 			}
 		}
@@ -93,5 +103,6 @@ public class ReadKlix {
 		 }
 	}
 
-	// end of main class
-}
+	// end of main method
+	
+} // end of class

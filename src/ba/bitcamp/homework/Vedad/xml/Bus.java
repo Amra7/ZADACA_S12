@@ -22,8 +22,11 @@ public class Bus {
 
 	/**
 	 * Constructor for Bus.
-	 * @param numBus - number of bus line.
-	 * @param busLine- City name or name of line that bus goes.
+	 * 
+	 * @param numBus
+	 *            - number of bus line.
+	 * @param busLine
+	 *            - City name or name of line that bus goes.
 	 */
 	public Bus(int numBus, String busLine) {
 		this.numBus = numBus;
@@ -68,7 +71,7 @@ public class Bus {
 		String str2 = "";
 		Iterator iter = busStationLines.iterator();
 		while (iter.hasNext()) {
-			str2 +="bus = " +  iter.next().toString();
+			str2 += "bus = " + iter.next().toString();
 		}
 
 		return str1 + str2;
@@ -89,13 +92,13 @@ public class Bus {
 		Iterator<Bus> it = busStation.iterator();
 		while (it.hasNext()) {
 			Bus temp = it.next();
-			pw.println("<bus= number='" + temp.numBus + "'  bus line= '"
+			pw.println("<bus number='" + temp.numBus + "'  busLine= '"
 					+ temp.busLine + "'>");
 			Iterator<Bus> itChild = temp.busStationLines.iterator();
 			while (itChild.hasNext()) {
 				Bus tempChild = itChild.next();
 				pw.println("    <busLine number='" + tempChild.numBus
-						+ "'  bus line= '" + tempChild.busLine + "'/>");
+						+ "'  busLine= '" + tempChild.busLine + "'/>");
 			}
 			pw.println(" </bus>");
 		}
@@ -103,5 +106,5 @@ public class Bus {
 		pw.flush();
 	}
 
-	// end of class
 }
+// end of class
